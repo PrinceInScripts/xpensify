@@ -73,7 +73,7 @@ class RegisteredUserController extends Controller
         ]);
 
         // Send email
-    // Mail::to($user->email)->send(new RegistrationSuccessMail($user, $company));
+    Mail::to($user->email)->send(new RegistrationSuccessMail($user, $company));
 
         event(new Registered($user));
 
